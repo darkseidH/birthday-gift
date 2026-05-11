@@ -203,7 +203,7 @@ body {
 }
 
 .welcome-photo {
-  width: min(100%, 360px);
+  width: min(100%, 390px);
   margin: 0;
   justify-self: end;
   transform: rotate(2deg);
@@ -218,7 +218,7 @@ body {
 }
 
 .story-photo {
-  width: min(100%, 430px);
+  width: min(100%, 470px);
   margin: 0;
   justify-self: end;
 }
@@ -296,6 +296,306 @@ body {
   aspect-ratio: 3 / 4;
 }
 
+.cake-section {
+  grid-template-columns: minmax(320px, 500px) minmax(0, 1fr);
+}
+
+.birthday-cake {
+  position: relative;
+  width: min(100%, 500px);
+  min-height: 450px;
+  display: grid;
+  align-content: end;
+  justify-self: start;
+  padding: 110px 18px 0;
+  isolation: isolate;
+}
+
+.cake-glow {
+  position: absolute;
+  left: 50%;
+  top: 38px;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(243, 214, 171, 0.52) 0%, rgba(248, 220, 228, 0.22) 46%, transparent 70%);
+  filter: blur(2px);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.cake-candles {
+  position: absolute;
+  left: 50%;
+  top: 22px;
+  z-index: 5;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+
+.number-candle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 82px;
+  height: 104px;
+  border: 1px solid rgba(255, 250, 246, 0.5);
+  border-radius: 18px 18px 14px 14px;
+  color: #8f3c57;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7), transparent 38%),
+    repeating-linear-gradient(
+      -32deg,
+      #fff7f0 0 9px,
+      #f8dce4 9px 17px,
+      #f3d6ab 17px 24px
+    );
+  box-shadow:
+    inset 0 -8px 0 rgba(143, 60, 87, 0.1),
+    inset 0 0 0 5px rgba(255, 250, 246, 0.34),
+    0 18px 34px rgba(91, 42, 57, 0.18);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.8rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 2px 0 rgba(255, 250, 246, 0.78);
+}
+
+.candle-two {
+  transform: rotate(-4deg);
+}
+
+.candle-four {
+  transform: rotate(3deg);
+}
+
+.number-wick {
+  position: absolute;
+  left: 50%;
+  top: -11px;
+  width: 3px;
+  height: 14px;
+  border-radius: 999px;
+  background: #6f3a45;
+  transform: translateX(-50%);
+}
+
+.number-flame {
+  position: absolute;
+  left: 50%;
+  top: -36px;
+  width: 24px;
+  height: 36px;
+  border-radius: 60% 60% 55% 18%;
+  background:
+    radial-gradient(circle at 48% 68%, #fff8cb 0 17%, transparent 19%),
+    linear-gradient(180deg, #fff7a8 0%, #ffba55 46%, #d86b51 76%, rgba(185, 96, 115, 0.92) 100%);
+  box-shadow:
+    0 0 18px rgba(255, 186, 85, 0.96),
+    0 0 38px rgba(243, 166, 75, 0.74),
+    0 0 66px rgba(243, 214, 171, 0.46);
+  transform: translateX(-50%) rotate(45deg);
+  transform-origin: 50% 82%;
+  animation: cakeFlameDance 720ms ease-in-out infinite alternate;
+  will-change: transform, filter, opacity;
+}
+
+.number-flame::before,
+.number-flame::after {
+  content: "";
+  position: absolute;
+  inset: 7px 7px 5px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, #fffbe0 0%, #ffd46d 62%, transparent 100%);
+  filter: blur(0.2px);
+}
+
+.number-flame::after {
+  inset: 13px 10px 7px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), #fff2a8 70%, transparent 100%);
+}
+
+.birthday-cake.is-wish-made .number-flame {
+  animation: cakeFlameBlowOut 780ms ease-out forwards;
+}
+
+.cake-top {
+  position: relative;
+  z-index: 4;
+  width: 88%;
+  height: 86px;
+  margin: 0 auto -20px;
+  border: 1px solid rgba(143, 60, 87, 0.12);
+  border-radius: 50% / 54%;
+  background:
+    radial-gradient(circle at 30% 34%, rgba(255, 255, 255, 0.85), transparent 18%),
+    radial-gradient(circle at 68% 48%, rgba(243, 214, 171, 0.44), transparent 20%),
+    linear-gradient(180deg, #fffaf6 0%, #f8dce4 100%);
+  box-shadow:
+    inset 0 -14px 0 rgba(185, 96, 115, 0.12),
+    0 16px 24px rgba(91, 42, 57, 0.08);
+}
+
+.icing-drop {
+  position: absolute;
+  bottom: -34px;
+  width: 28px;
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(180deg, #f8dce4 0%, #f1bfd0 100%);
+  box-shadow: inset -4px -6px 0 rgba(185, 96, 115, 0.08);
+}
+
+.drop-one {
+  left: 16%;
+  height: 48px;
+}
+
+.drop-two {
+  left: 38%;
+  height: 34px;
+}
+
+.drop-three {
+  right: 28%;
+  height: 46px;
+}
+
+.drop-four {
+  right: 10%;
+  height: 30px;
+}
+
+.cake-berry {
+  position: absolute;
+  top: 28px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.75), transparent 22%),
+    #b96073;
+  box-shadow: 0 5px 12px rgba(91, 42, 57, 0.16);
+}
+
+.berry-one {
+  left: 28%;
+}
+
+.berry-two {
+  left: 50%;
+  top: 22px;
+}
+
+.berry-three {
+  right: 25%;
+}
+
+.cake-layer {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(143, 60, 87, 0.13);
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(255, 250, 246, 0.32), transparent 48%),
+    linear-gradient(90deg, transparent 0 9%, rgba(255, 255, 255, 0.26) 9% 12%, transparent 12% 100%),
+    linear-gradient(180deg, #f3d6ab 0%, #d99578 100%);
+  box-shadow:
+    inset 0 -18px 0 rgba(143, 60, 87, 0.11),
+    inset 0 14px 20px rgba(255, 250, 246, 0.24);
+}
+
+.cake-layer::before {
+  content: "";
+  position: absolute;
+  inset: 8px 18px auto;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 250, 246, 0.24);
+}
+
+.cake-layer-one {
+  z-index: 3;
+  width: 90%;
+  height: 92px;
+}
+
+.cake-layer-two {
+  z-index: 2;
+  height: 118px;
+  margin-top: -10px;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(255, 250, 246, 0.24), transparent 46%),
+    linear-gradient(90deg, transparent 0 12%, rgba(255, 255, 255, 0.2) 12% 15%, transparent 15% 100%),
+    linear-gradient(180deg, #b96073 0%, #8f3c57 100%);
+}
+
+.cake-sprinkle {
+  position: absolute;
+  z-index: 2;
+  width: 26px;
+  height: 5px;
+  border-radius: 999px;
+  background: #fff7f0;
+  opacity: 0.86;
+}
+
+.sprinkle-one {
+  left: 18%;
+  top: 42px;
+  transform: rotate(18deg);
+}
+
+.sprinkle-two {
+  left: 55%;
+  top: 56px;
+  background: #f8dce4;
+  transform: rotate(-20deg);
+}
+
+.sprinkle-three {
+  right: 18%;
+  top: 36px;
+  background: #b96073;
+  transform: rotate(12deg);
+}
+
+.sprinkle-four {
+  left: 22%;
+  bottom: 34px;
+  background: #f3d6ab;
+  transform: rotate(-14deg);
+}
+
+.sprinkle-five {
+  left: 48%;
+  bottom: 44px;
+  transform: rotate(20deg);
+}
+
+.sprinkle-six {
+  right: 20%;
+  bottom: 30px;
+  background: #f8dce4;
+  transform: rotate(-18deg);
+}
+
+.cake-plate {
+  position: relative;
+  z-index: 1;
+  width: 106%;
+  height: 42px;
+  margin: -8px auto 0;
+  border: 1px solid rgba(143, 60, 87, 0.12);
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(255, 255, 255, 0.92) 0 42%, rgba(248, 220, 228, 0.62) 43% 100%);
+  box-shadow: 0 18px 34px rgba(91, 42, 57, 0.16);
+}
+
 .eyebrow,
 .panel-label {
   margin: 0 0 14px;
@@ -320,6 +620,17 @@ h1 {
 
 h2 {
   font-size: clamp(2.25rem, 5vw, 4.4rem);
+}
+
+h2.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 0.08em;
+  height: 0.72em;
+  margin-left: 0.08em;
+  background: currentColor;
+  vertical-align: -0.04em;
+  animation: cursorBlink 780ms steps(2, start) infinite;
 }
 
 .hero-copy {
@@ -385,11 +696,137 @@ h2 {
 
 .unlock-actions {
   margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .soft-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
   padding: 12px 18px;
   border-radius: 999px;
+}
+
+.soft-button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.wish-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.candle {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 23px;
+  border-radius: 3px 3px 2px 2px;
+  background:
+    repeating-linear-gradient(
+      -35deg,
+      #fff7f0 0 6px,
+      #f8dce4 6px 11px
+    );
+  box-shadow: inset 0 -3px 0 rgba(143, 60, 87, 0.14);
+}
+
+.flame {
+  position: absolute;
+  left: 50%;
+  top: -13px;
+  width: 12px;
+  height: 16px;
+  border-radius: 55% 55% 55% 12%;
+  background: linear-gradient(180deg, #fff2a8 0%, #f3a64b 68%, #b96073 100%);
+  box-shadow: 0 0 18px rgba(243, 166, 75, 0.8);
+  transform: translateX(-50%) rotate(45deg);
+  transform-origin: 50% 80%;
+  animation: flameFlicker 900ms ease-in-out infinite;
+}
+
+.wish-button.is-blown .flame {
+  animation: blowOut 760ms ease-out forwards;
+}
+
+.wish-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 14;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(243, 214, 171, 0.44), transparent 34%),
+    rgba(49, 34, 42, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms ease;
+  backdrop-filter: blur(14px);
+}
+
+.wish-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wish-stage {
+  width: min(920px, 100%);
+  max-height: calc(100svh - 32px);
+  overflow: auto;
+  display: grid;
+  justify-items: center;
+  padding: 20px 24px 30px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 250, 246, 0.96), rgba(248, 220, 228, 0.88) 54%, rgba(255, 243, 229, 0.9) 100%);
+  box-shadow: 0 34px 110px rgba(49, 34, 42, 0.34);
+}
+
+.wish-stage h2 {
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.wish-countdown {
+  min-height: 1.1em;
+  margin: 0 0 -6px;
+  color: var(--rose-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 13vw, 8rem);
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 10px 28px rgba(143, 60, 87, 0.16);
+  transform-origin: center;
+  animation: countPulse 900ms ease both;
+}
+
+.wish-countdown.pulse-count {
+  animation: countPulse 900ms ease both;
+}
+
+.wish-countdown.is-done {
+  font-size: clamp(2.2rem, 7vw, 4.8rem);
+}
+
+.wish-cake {
+  width: min(100%, 620px);
+  min-height: 500px;
+  justify-self: center;
+  margin-inline: auto;
+  transform: scale(1.06);
+}
+
+.wish-close {
+  margin-top: -6px;
 }
 
 .reasons-deck {
@@ -668,10 +1105,19 @@ figcaption {
   box-shadow: 0 30px 90px rgba(49, 34, 42, 0.3);
 }
 
-.letter-card p:last-child {
+.letter-progress p {
+  margin: 0;
   color: var(--muted);
   line-height: 1.85;
   white-space: pre-line;
+}
+
+.letter-progress p + p {
+  margin-top: 18px;
+}
+
+.letter-actions {
+  margin-top: 22px;
 }
 
 .modal-close {
@@ -747,6 +1193,148 @@ figcaption {
   animation-delay: -6s;
 }
 
+.souvenir-card {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 720px;
+  padding: 28px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 10%, rgba(255, 226, 231, 0.92), transparent 32%),
+    linear-gradient(135deg, #fff8f3 0%, #fde9ef 50%, #fff3e5 100%);
+}
+
+.souvenir-frame {
+  padding: 34px;
+  border: 10px solid rgba(255, 250, 246, 0.9);
+  outline: 2px solid rgba(143, 60, 87, 0.22);
+  background: rgba(255, 250, 246, 0.86);
+  box-shadow: 0 24px 70px rgba(91, 42, 57, 0.18);
+  text-align: center;
+}
+
+.souvenir-frame h2 {
+  font-size: 3.5rem;
+}
+
+.souvenir-frame img {
+  display: block;
+  width: 360px;
+  aspect-ratio: 4 / 5;
+  margin: 24px auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 18px 44px rgba(91, 42, 57, 0.22);
+}
+
+.souvenir-frame p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@keyframes flameFlicker {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(42deg) scale(1);
+  }
+
+  50% {
+    transform: translateX(-50%) rotate(49deg) scale(0.88, 1.1);
+  }
+}
+
+@keyframes blowOut {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(-50%) translateY(0) rotate(45deg) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateX(22px) translateY(-5px) rotate(70deg) scale(0.2);
+  }
+}
+
+@keyframes cakeFlameDance {
+  0% {
+    filter: blur(0);
+    opacity: 0.92;
+    transform: translateX(-50%) translateY(0) rotate(38deg) scale(0.88, 1.08);
+  }
+
+  35% {
+    filter: blur(0.15px);
+    opacity: 1;
+    transform: translateX(-54%) translateY(-2px) rotate(50deg) scale(1.02, 0.94);
+  }
+
+  70% {
+    filter: blur(0);
+    opacity: 0.96;
+    transform: translateX(-47%) translateY(1px) rotate(42deg) scale(0.94, 1.14);
+  }
+
+  100% {
+    filter: blur(0.1px);
+    opacity: 1;
+    transform: translateX(-52%) translateY(-1px) rotate(48deg) scale(1.08, 0.98);
+  }
+}
+
+@keyframes cakeFlameBlowOut {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(-50%) translateY(0) rotate(45deg) scale(1);
+  }
+
+  45% {
+    opacity: 0.72;
+    filter: blur(2px);
+    transform: translateX(12px) translateY(-4px) rotate(72deg) scale(0.55);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(28px) translateY(-8px) rotate(90deg) scale(0.12);
+  }
+}
+
+@keyframes countPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.74) translateY(12px);
+  }
+
+  42% {
+    opacity: 1;
+    transform: scale(1.08) translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes cursorBlink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes float {
   0%,
   100% {
@@ -766,10 +1354,11 @@ figcaption {
   .scroll-section {
     height: 100svh;
     min-height: 100svh;
-    padding: 32px 0;
+    padding: 28px 0;
   }
 
   .welcome-section,
+  .cake-section,
   .split-section,
   .reverse-section {
     grid-template-columns: 1fr;
@@ -777,7 +1366,7 @@ figcaption {
   }
 
   .welcome-photo {
-    width: min(100%, 320px);
+    width: min(100%, 350px);
     justify-self: start;
     transform: rotate(0deg);
   }
@@ -792,7 +1381,7 @@ figcaption {
 
   .story-photo,
   .reverse-section .story-photo {
-    width: min(100%, 360px);
+    width: min(100%, 390px);
     justify-self: start;
   }
 
@@ -801,12 +1390,70 @@ figcaption {
     aspect-ratio: 16 / 11;
   }
 
+  .birthday-cake {
+    width: min(100%, 380px);
+    min-height: 340px;
+    justify-self: start;
+    padding: 72px 12px 0;
+  }
+
+  .number-candle {
+    width: 62px;
+    height: 82px;
+    border-radius: 14px;
+    font-size: 3.6rem;
+  }
+
+  .number-flame {
+    top: -30px;
+    width: 18px;
+    height: 26px;
+  }
+
+  .wish-stage {
+    padding: 16px 16px 26px;
+  }
+
+  .wish-countdown {
+    margin-bottom: 0;
+  }
+
+  .wish-cake {
+    width: min(100%, 430px);
+    min-height: 390px;
+    transform: scale(1);
+  }
+
+  .cake-top {
+    height: 72px;
+  }
+
+  .cake-layer-one {
+    height: 70px;
+  }
+
+  .cake-layer-two {
+    height: 88px;
+  }
+
+  .countdown-section {
+    gap: 12px;
+  }
+
+  .countdown-section .hero-copy {
+    margin-top: 14px;
+  }
+
+  .countdown {
+    margin-top: 16px;
+  }
+
   .flip-back {
     padding: 20px;
   }
 
   .surprise-panel {
-    padding: 22px;
+    padding: 18px;
   }
 
   .music-toggle {
@@ -818,12 +1465,20 @@ figcaption {
     right: 12px;
   }
 
+  .unlock-actions .soft-button {
+    flex: 1 1 190px;
+  }
+
   .letter-card {
     padding: 28px 22px;
   }
 }
 
 @media (max-width: 420px) {
+  .scroll-section {
+    padding: 22px 0;
+  }
+
   .welcome-section {
     padding-top: 60px;
   }
@@ -832,11 +1487,101 @@ figcaption {
     font-size: 3rem;
   }
 
+  h2 {
+    font-size: 2.18rem;
+  }
+
+  .message-copy p:not(.eyebrow),
+  .hero-copy {
+    margin-top: 14px;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
   .countdown {
     gap: 10px;
   }
 
   .time-card {
+    min-height: 82px;
     padding: 16px 10px;
+  }
+
+  .time-card strong {
+    font-size: 2.35rem;
+  }
+
+  .birthday-cake {
+    width: min(100%, 320px);
+    min-height: 270px;
+    padding: 56px 8px 0;
+  }
+
+  .cake-candles {
+    gap: 8px;
+    top: 16px;
+  }
+
+  .number-candle {
+    width: 44px;
+    height: 60px;
+    border-radius: 12px;
+    font-size: 2.5rem;
+  }
+
+  .number-flame {
+    top: -24px;
+    width: 15px;
+    height: 22px;
+  }
+
+  .cake-berry {
+    width: 14px;
+    height: 14px;
+  }
+
+  .icing-drop {
+    width: 22px;
+  }
+
+  .cake-top {
+    height: 58px;
+  }
+
+  .cake-layer-one {
+    height: 58px;
+  }
+
+  .cake-layer-two {
+    height: 72px;
+  }
+
+  .cake-plate {
+    height: 30px;
+  }
+
+  .slide-dots {
+    right: 6px;
+    gap: 7px;
+  }
+
+  .slide-dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .music-toggle {
+    max-width: calc(100% - 24px);
+    padding: 9px 12px;
+  }
+
+  .unlock-actions .soft-button {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .letter-modal,
+  .wish-modal {
+    padding: 12px;
   }
 }
