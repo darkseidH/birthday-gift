@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Countdown</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <div class="ambient" aria-hidden="true">
+      <span class="spark spark-one"></span>
+      <span class="spark spark-two"></span>
+      <span class="spark spark-three"></span>
+      <span class="heart heart-one"></span>
+      <span class="heart heart-two"></span>
+    </div>
+    <div class="love-stream" id="love-stream" aria-hidden="true"></div>
+    <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false">Music</button>
+    <audio id="romantic-audio" src="assets/romantic-music.mp3" preload="auto" loop></audio>
+    <nav class="slide-dots" id="slide-dots" aria-label="Slide navigation"></nav>
+    <div class="secret-note" id="secret-note" role="status" aria-live="polite">
+      You found the secret: I love you more than this page can say.
+    </div>
+
+    <section class="scroll-section welcome-section" aria-labelledby="welcome-title">
+      <div class="welcome-copy">
+        <p class="eyebrow">A little place made for you</p>
+        <h1 id="welcome-title">Welcome, <span data-her-name>9emla</span></h1>
+        <p class="hero-copy">
+          I made this page so your birthday does not feel like only one day. It starts here, with a soft welcome just for you.
+        </p>
+        <a class="scroll-cue" href="#message-one">Continue</a>
+      </div>
+      <figure class="welcome-photo flip-card" tabindex="0" aria-label="Flip welcome photo">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <img src="assets/portrait-1.jpg" alt="9emla smiling">
+          </div>
+          <figcaption class="flip-face flip-back">
+            <span>My beautiful 9emla</span>
+            This smile is the first thing I wanted this page to celebrate.
+          </figcaption>
+        </div>
+      </figure>
+    </section>
+
+    <section class="scroll-section message-section split-section" id="message-one" aria-labelledby="message-one-title">
+      <div class="message-copy">
+        <p class="eyebrow">First message</p>
+        <h2 id="message-one-title">You make ordinary moments feel special.</h2>
+        <p>
+          Your smile, your energy, and the way you exist in my life make everything warmer. This page is only a small way to say how much you mean to me.
+        </p>
+      </div>
+      <figure class="story-photo flip-card" tabindex="0" aria-label="Flip our selfie">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <img src="assets/together-1.jpg" alt="A selfie together">
+          </div>
+          <figcaption class="flip-face flip-back">
+            <span>A moment I keep</span>
+            I love this photo because it feels simple, real, and happy.
+          </figcaption>
+        </div>
+      </figure>
+    </section>
+
+    <section class="scroll-section message-section split-section reverse-section" aria-labelledby="message-two-title">
+      <figure class="story-photo tall-photo flip-card" tabindex="0" aria-label="Flip green shirt photo">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <img src="assets/portrait-2.jpg" alt="9emla smiling in a green shirt">
+          </div>
+          <figcaption class="flip-face flip-back">
+            <span>That beautiful smile</span>
+            You have this soft way of making everything around you brighter.
+          </figcaption>
+        </div>
+      </figure>
+      <div class="message-copy">
+        <p class="eyebrow">Another message</p>
+        <h2 id="message-two-title">I hope you feel loved in every detail.</h2>
+        <p>
+          Every heart floating here is a tiny reminder that I am thinking about you. Touch the screen whenever you want and let the hearts turn into kisses.
+        </p>
+      </div>
+    </section>
+
+    <section class="scroll-section message-section split-section" aria-labelledby="message-three-title">
+      <div class="message-copy">
+        <p class="eyebrow">One more before the surprise</p>
+        <h2 id="message-three-title">Your birthday deserves a countdown.</h2>
+        <p>
+          Keep scrolling. At the end, you will find the timer counting down to your special day, and below it a message that stays locked until the moment arrives.
+        </p>
+      </div>
+      <figure class="story-photo tall-photo flip-card" tabindex="0" aria-label="Flip window photo">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <img src="assets/portrait-3.jpg" alt="9emla by a window">
+          </div>
+          <figcaption class="flip-face flip-back">
+            <span>Always beautiful</span>
+            Even quiet photos of you become memories I want to keep.
+          </figcaption>
+        </div>
+      </figure>
+    </section>
+
+    <section class="scroll-section countdown-section" aria-labelledby="hero-title">
+      <div class="hero">
+        <p class="eyebrow">The final step</p>
+        <h2 id="hero-title">Counting every moment until <span data-her-name>9emla</span>'s day</h2>
+        <p class="hero-copy">
+          Every second brings us closer to celebrating the person who makes ordinary days feel beautiful.
+        </p>
+
+        <div class="countdown" aria-label="Birthday countdown">
+          <article class="time-card">
+            <strong id="days">00</strong>
+            <span>Days</span>
+          </article>
+          <article class="time-card">
+            <strong id="hours">00</strong>
+            <span>Hours</span>
+          </article>
+          <article class="time-card">
+            <strong id="minutes">00</strong>
+            <span>Minutes</span>
+          </article>
+          <article class="time-card">
+            <strong id="seconds">00</strong>
+            <span>Seconds</span>
+          </article>
+        </div>
+      </div>
+
+      <section class="surprise-panel locked-panel" aria-live="polite">
+        <p class="panel-label" id="state-label">Locked until your birthday</p>
+        <h2 id="surprise-title">Your message is locked</h2>
+        <p id="surprise-message">
+          Come back when the countdown ends. This space will open with a birthday message written just for you.
+        </p>
+        <div class="unlock-actions is-hidden" id="unlock-actions">
+          <button class="soft-button" id="open-letter" type="button">Open my birthday letter</button>
+        </div>
+        <div class="reasons-deck is-hidden" id="reasons-deck" aria-live="polite">
+          <p class="panel-label">Reasons I love you</p>
+          <p id="reason-text"></p>
+          <div class="reason-controls">
+            <button class="icon-button" id="prev-reason" type="button" aria-label="Previous reason">‹</button>
+            <span id="reason-count"></span>
+            <button class="icon-button" id="next-reason" type="button" aria-label="Next reason">›</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="letter-modal" id="letter-modal" aria-hidden="true" role="dialog" aria-labelledby="letter-title">
+    <div class="letter-card">
+      <button class="modal-close" id="close-letter" type="button" aria-label="Close letter">×</button>
+      <p class="panel-label">For you</p>
+      <h2 id="letter-title">My birthday letter</h2>
+      <p id="letter-body"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
